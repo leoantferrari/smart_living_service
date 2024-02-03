@@ -1,1 +1,1 @@
-# smart_living_service
+# Backend for Smart Living Project
