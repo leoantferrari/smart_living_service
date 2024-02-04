@@ -13,6 +13,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      THE_DB: ${{ secrets.THE_DB }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
     steps:
       - uses: actions/checkout@v4
 
