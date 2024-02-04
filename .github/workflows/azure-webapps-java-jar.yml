@@ -80,5 +80,5 @@ jobs:
         with:
           app-name: 'ello-ml'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
+          publish-profile: ${{ secrets.AZURE_APP_SERVICE_PUBLISHPROFILE }}
           package: '*.jar'
