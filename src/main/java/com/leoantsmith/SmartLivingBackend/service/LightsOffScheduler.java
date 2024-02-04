@@ -33,10 +33,10 @@ public class LightsOffScheduler {
         Date threshold = new Date(System.currentTimeMillis() - TimeUnit.MINUTES.toMillis(1));
         List<Light> lightList = lightRepository.findLightsThatAreOnAndLastActiveBeforeThreshold(threshold);
         for (Light light: lightList) {
+            logger.log(Level.INFO,"Deactivating light with id {0}", light.getId());
             lightHandlerService.turnOffLight(light.getTurnOffTrigger());
             light.setOn(false);
             light.setLastActive(new Date());
-            logger.log(Level.INFO,"Deactivating light " + light.getId() +" lol" + light.getTurnOffTrigger());
             lightRepository.save(light);
         }
     }

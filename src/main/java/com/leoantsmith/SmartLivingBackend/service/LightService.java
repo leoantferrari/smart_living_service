@@ -32,12 +32,12 @@ public class LightService implements ILightService {
         List<Light> lightList = lightRepository.findLightsByLocationAndDistance(lightRequestDTO.getCoordinates().getLat(), lightRequestDTO.getCoordinates().getLon(), lightRequestDTO.getDistance());
         // Check if on, and change active time
         for (Light light: lightList) {
+            logger.log(Level.INFO,"Activating light with id {0}", light.getId());
             if (!light.getOn()) {
                 lightHandlerService.turnOnLight(light.getTurnOnTrigger());
             }
             light.setOn(true);
             light.setLastActive(new Date());
-            logger.log(Level.INFO, "Activating light " + light.getId() +" lol" + light.getTurnOnTrigger());
             lightRepository.save(light);
         }
     }
@@ -66,12 +66,12 @@ public class LightService implements ILightService {
         List<Light> lightList = lightRepository.findAll();
         // Check if on, and change active time
         for (Light light: lightList) {
+            logger.log(Level.INFO,"Deactivating light with id {0}", light.getId());
             if (light.getOn()) {
                 lightHandlerService.turnOffLight(light.getTurnOffTrigger());
             }
             light.setOn(false);
             light.setLastActive(new Date());
-            logger.log(Level.INFO,"Deactivating light " + light.getId() +" lol" + light.getTurnOffTrigger());
             lightRepository.save(light);
         }
     }

@@ -61,11 +61,13 @@ public class IFTTTLightHandlerService implements ILightHandlerService {
 
     @Override
     public void turnOnLight(String url) {
+        logger.log(Level.INFO,"Sending Request to Turn On light");
         triggerUrl(url);
     }
 
     @Override
     public void turnOffLight(String url) {
+        logger.log(Level.INFO,"Sending Request to Turn Off light");
         triggerUrl(url);
     }
 
