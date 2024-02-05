@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${THE_DB}?user=${DB_USER}&password=${DB_PASSWORD}&sslmode=require
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://ello.postgres.database.azure.com:5432/smartLiving?user=ello&password=gibbiX12345&sslmode=require
+    username: ello
+    password: gibbiX12345
   jpa:
     hibernate:
       ddl-auto: update
