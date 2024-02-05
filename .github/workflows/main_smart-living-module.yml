@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     env:
       THE_DB: ${{ secrets.THE_DB }}
       DB_USER: ${{ secrets.DB_USER }}
