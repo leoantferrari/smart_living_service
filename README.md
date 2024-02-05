@@ -4,9 +4,9 @@ This Service provides the backend endpoints for the smart living project.
 
 ## Endpoints
 ### Activate Lights
-To activate the lights within a certain distance of the current gps location, you can do an activate light request, with information in the payload:
+To activate the lights within a certain distance of the current GPS location, you can do an activate light request, with information in the payload:
 
-`GET /light/activate`
+`PUT /light/activate`
 
 With Payload:
 ```json
