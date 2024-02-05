@@ -1,8 +1,8 @@
-package com.leoantsmith.SmartLivingBackend.service;
+package com.leoantsmith.smart_living_backend.service;
 
-import com.leoantsmith.SmartLivingBackend.model.Light;
-import com.leoantsmith.SmartLivingBackend.repository.LightRepository;
-import com.leoantsmith.SmartLivingBackend.service.intf.ILightHandlerService;
+import com.leoantsmith.smart_living_backend.model.Light;
+import com.leoantsmith.smart_living_backend.repository.LightRepository;
+import com.leoantsmith.smart_living_backend.service.intf.ILightHandlerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 @Component
 public class LightsOffScheduler {
-    private final Logger logger = Logger.getLogger(LightService.class.getName());
+    private final Logger logger = Logger.getLogger(LightsOffScheduler.class.getName());
 
     @Autowired
     ILightHandlerService lightHandlerService;
@@ -29,7 +29,7 @@ public class LightsOffScheduler {
      */
     @Scheduled(fixedRate = 10000)
     public void performTask() {
-        logger.log(Level.INFO,"Checking for lights to deactivate at  "+LocalDateTime.now());
+        logger.log(Level.INFO,"Checking for lights to deactivate at {0}", LocalDateTime.now());
         Date threshold = new Date(System.currentTimeMillis() - TimeUnit.MINUTES.toMillis(1));
         List<Light> lightList = lightRepository.findLightsThatAreOnAndLastActiveBeforeThreshold(threshold);
         for (Light light: lightList) {

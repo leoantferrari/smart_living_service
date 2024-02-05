@@ -20,7 +20,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <start-class>com.leoantsmith.SmartLivingBackend.SmartLivingApplication</start-class>
+        <start-class>com.leoantsmith.smart_living_backend.SmartLivingApplication</start-class>
     </properties>
 
     <dependencies>
@@ -78,7 +78,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.leoantsmith.SmartLivingBackend.SmartLivingApplication</mainClass>
+                    <mainClass>com.leoantsmith.smart_living_backend.SmartLivingApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

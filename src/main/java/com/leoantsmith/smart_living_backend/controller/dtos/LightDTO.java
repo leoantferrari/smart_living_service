@@ -1,33 +1,21 @@
-package com.leoantsmith.SmartLivingBackend.model;
+package com.leoantsmith.smart_living_backend.controller.dtos;
 
-import javax.persistence.*;
 import java.util.Date;
-import java.util.Objects;
 
-@Entity
-@Table(name = "light")
-public class Light {
+public class LightDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "lon")
     private Double lon;
 
-    @Column(name = "lat")
     private Double lat;
 
-    @Column(name = "isOn")
     private Boolean isOn;
 
-    @Column(name = "lastActive")
     private Date lastActive;
 
-    @Column(name = "turnOnTrigger")
     private String turnOnTrigger;
 
-    @Column(name = "turnOffTrigger")
     private String turnOffTrigger;
 
     public long getId() {
@@ -54,7 +42,7 @@ public class Light {
         this.lat = lat;
     }
 
-    public Boolean isOn() {
+    public Boolean getOn() {
         return isOn;
     }
 
@@ -68,10 +56,6 @@ public class Light {
 
     public void setLastActive(Date lastActive) {
         this.lastActive = lastActive;
-    }
-
-    public Boolean getOn() {
-        return isOn;
     }
 
     public String getTurnOnTrigger() {
@@ -88,10 +72,5 @@ public class Light {
 
     public void setTurnOffTrigger(String turnOffTrigger) {
         this.turnOffTrigger = turnOffTrigger;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 }

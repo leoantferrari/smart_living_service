@@ -1,4 +1,4 @@
-package com.leoantsmith.SmartLivingBackend.controller.dtos;
+package com.leoantsmith.smart_living_backend.controller.dtos;
 
 public class CoordinatesDTO {
     long lon;

@@ -1,7 +1,7 @@
-package com.leoantsmith.SmartLivingBackend.controller;
+package com.leoantsmith.smart_living_backend.controller;
 
-import com.leoantsmith.SmartLivingBackend.controller.dtos.LightDTO;
-import com.leoantsmith.SmartLivingBackend.service.intf.ILightService;
+import com.leoantsmith.smart_living_backend.controller.dtos.LightDTO;
+import com.leoantsmith.smart_living_backend.service.intf.ILightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

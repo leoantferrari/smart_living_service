@@ -1,4 +1,4 @@
-package com.leoantsmith.SmartLivingBackend.service.intf;
+package com.leoantsmith.smart_living_backend.service.intf;
 
 public interface ILightHandlerService {
 

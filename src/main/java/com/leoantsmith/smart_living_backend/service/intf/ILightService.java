@@ -1,7 +1,7 @@
-package com.leoantsmith.SmartLivingBackend.service.intf;
+package com.leoantsmith.smart_living_backend.service.intf;
 
-import com.leoantsmith.SmartLivingBackend.controller.dtos.LightDTO;
-import com.leoantsmith.SmartLivingBackend.controller.dtos.LightRequestDTO;
+import com.leoantsmith.smart_living_backend.controller.dtos.LightDTO;
+import com.leoantsmith.smart_living_backend.controller.dtos.LightRequestDTO;
 
 public interface ILightService {
 

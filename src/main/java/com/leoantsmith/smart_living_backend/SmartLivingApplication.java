@@ -1,15 +1,9 @@
-package com.leoantsmith.SmartLivingBackend;
+package com.leoantsmith.smart_living_backend;
 
-import io.github.cdimascio.dotenv.Dotenv;
-import com.leoantsmith.SmartLivingBackend.service.LightService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
-
-import java.util.logging.Logger;
-
-import static java.util.Arrays.stream;
 
 @SpringBootApplication
 @ConfigurationPropertiesScan

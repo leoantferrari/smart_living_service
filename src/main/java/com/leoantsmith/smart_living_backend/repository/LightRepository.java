@@ -1,6 +1,6 @@
-package com.leoantsmith.SmartLivingBackend.repository;
+package com.leoantsmith.smart_living_backend.repository;
 
-import com.leoantsmith.SmartLivingBackend.model.Light;
+import com.leoantsmith.smart_living_backend.model.Light;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

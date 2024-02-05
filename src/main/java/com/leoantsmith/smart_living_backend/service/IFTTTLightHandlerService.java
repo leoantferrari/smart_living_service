@@ -1,7 +1,8 @@
-package com.leoantsmith.SmartLivingBackend.service;
+package com.leoantsmith.smart_living_backend.service;
 
-import com.leoantsmith.SmartLivingBackend.model.helper.RequestType;
-import com.leoantsmith.SmartLivingBackend.service.intf.ILightHandlerService;
+import com.leoantsmith.smart_living_backend.model.exceptions.RestConnectionException;
+import com.leoantsmith.smart_living_backend.model.helper.RequestType;
+import com.leoantsmith.smart_living_backend.service.intf.ILightHandlerService;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -18,15 +19,13 @@ public class IFTTTLightHandlerService implements ILightHandlerService {
      * Opens a HTML Connection
      *
      * @param url url to connect to
-     * @param requestType the type of request
      * @return the open connection
-     *
      * @throws IOException if the connection fails
      */
-    private HttpURLConnection openConnection(String url, RequestType requestType) throws IOException {
+    private HttpURLConnection openConnection(String url) throws IOException {
 
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-        connection.setRequestMethod(requestType.name());
+        connection.setRequestMethod(RequestType.POST.name());
         connection.setInstanceFollowRedirects(false);
 
         return connection;
@@ -40,7 +39,7 @@ public class IFTTTLightHandlerService implements ILightHandlerService {
      */
     private void validateConnection(HttpURLConnection connection) throws IOException {
         if (connection.getResponseCode() != 200) {
-            throw new RuntimeException("Returned with incorrect response code: " + connection.getResponseCode());
+            throw new RestConnectionException("Returned with incorrect response code: " + connection.getResponseCode());
         }
         logger.log(Level.INFO, "Request was successful and returned with Status Code 200");
     }
@@ -52,10 +51,10 @@ public class IFTTTLightHandlerService implements ILightHandlerService {
      */
     private void triggerUrl(String url) {
         try {
-            HttpURLConnection httpURLConnection = openConnection(url, RequestType.POST);
+            HttpURLConnection httpURLConnection = openConnection(url);
             validateConnection(httpURLConnection);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RestConnectionException(e.toString());
         }
     }
 
