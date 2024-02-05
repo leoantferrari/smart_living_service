@@ -47,7 +47,7 @@ public class LightService implements ILightService {
 
         toSave.setTurnOffTrigger(light.getTurnOffTrigger());
         toSave.setTurnOnTrigger(light.getTurnOnTrigger());
-        toSave.setOn(light.getOn());
+        toSave.setOn(false);
         toSave.setLon(light.getLon());
         toSave.setLat(light.getLat());
         toSave.setLastActive(new Date());

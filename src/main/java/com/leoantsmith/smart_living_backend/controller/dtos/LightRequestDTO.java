@@ -9,7 +9,7 @@ public class LightRequestDTO {
         return distance;
     }
 
-    public void setDistance(long distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 
