@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     env:
       THE_DB: ${{ secrets.THE_DB }}
       DB_USER: ${{ secrets.DB_USER }}
@@ -28,6 +28,10 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+        env:
+          THE_DB: ${{ secrets.THE_DB }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -55,4 +59,4 @@ jobs:
           app-name: 'smart-living-module'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7D990044E7864103A8F2CEB156B80695 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1CF26257EE5647189019266531652D55 }}
